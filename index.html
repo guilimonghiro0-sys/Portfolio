@@ -350,7 +350,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 2rem 3rem;
+      padding: clamp(1rem, 2.5vw, 2rem) clamp(1.2rem, 4vw, 3rem);
     }
 
     .nav-logo {
@@ -529,18 +529,18 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 0 3rem 7rem;
+      padding: 0 clamp(1.2rem, 5vw, 3rem) clamp(4rem, 8vh, 7rem);
       overflow: hidden;
     }
 
     /* GLOBE CONTAINER */
     #globe-wrap {
       position: absolute;
-      right: -5vw;
+      right: max(-8vw, -3rem);
       top: 50%;
       transform: translateY(-50%);
-      width: min(620px, 55vw);
-      height: min(620px, 55vw);
+      width: min(55vw, 620px);
+      height: min(55vw, 620px);
       z-index: 1;
       pointer-events: none;
     }
@@ -641,14 +641,16 @@
       position: relative;
       z-index: 2;
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: flex-end;
-      margin-top: 3rem;
+      margin-top: clamp(1.5rem, 3vw, 3rem);
+      gap: 1.5rem;
     }
 
     .hero-sub {
-      max-width: 380px;
-      font-size: 0.95rem;
+      max-width: min(380px, 100%);
+      font-size: clamp(0.85rem, 1.8vw, 0.95rem);
       color: var(--zinc-light);
       line-height: 1.75;
       opacity: 0;
@@ -657,7 +659,8 @@
     .hero-cta {
       opacity: 0;
       display: flex;
-      gap: 1rem;
+      flex-wrap: wrap;
+      gap: 0.8rem;
       align-items: center;
     }
 
@@ -797,10 +800,10 @@
 
     /* ABOUT */
     #about {
-      padding: 11rem 3rem;
+      padding: clamp(4rem, 10vw, 11rem) clamp(1.2rem, 5vw, 3rem);
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+      gap: clamp(2rem, 5vw, 6rem);
       align-items: center;
       position: relative;
       z-index: 1;
@@ -850,13 +853,13 @@
 
     .stat-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
     }
 
     .stat-box {
       border: 1px solid var(--zinc);
-      padding: 2rem;
+      padding: clamp(1.2rem, 2.5vw, 2rem);
       position: relative;
       overflow: hidden;
       transition: border-color .4s;
@@ -904,7 +907,7 @@
 
     .skills-box {
       border: 1px solid var(--zinc);
-      padding: 2rem;
+      padding: clamp(1rem, 3vw, 2rem);
     }
 
     .skills-title {
@@ -940,16 +943,18 @@
 
     /* SERVICES */
     #services {
-      padding: 10rem 3rem;
+      padding: clamp(4rem, 10vw, 10rem) clamp(1.2rem, 5vw, 3rem);
       position: relative;
       z-index: 1;
     }
 
     .services-header {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: flex-end;
-      margin-bottom: 5rem;
+      gap: 1rem;
+      margin-bottom: clamp(2.5rem, 5vw, 5rem);
       padding-bottom: 2rem;
       border-bottom: 1px solid var(--zinc);
     }
@@ -964,7 +969,7 @@
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
       gap: 1.5px;
       background: var(--zinc);
     }
@@ -1053,9 +1058,9 @@
 
     /* EDUFIRST */
     #edufirst {
-      margin: 0 3rem;
+      margin: 0 clamp(1.2rem, 5vw, 3rem);
       border: 1px solid var(--zinc);
-      padding: 5rem;
+      padding: clamp(2rem, 5vw, 5rem);
       position: relative;
       overflow: hidden;
       z-index: 1;
@@ -1139,16 +1144,18 @@
 
     /* PROJETS */
     #projets {
-      padding: 10rem 3rem;
+      padding: clamp(4rem, 10vw, 10rem) clamp(1.2rem, 5vw, 3rem);
       position: relative;
       z-index: 1;
     }
 
     .projets-header {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: flex-end;
-      margin-bottom: 5rem;
+      gap: 1rem;
+      margin-bottom: clamp(2.5rem, 5vw, 5rem);
       padding-bottom: 2rem;
       border-bottom: 1px solid var(--zinc);
     }
@@ -1170,10 +1177,10 @@
 
     .projet-row {
       display: grid;
-      grid-template-columns: 3.5rem 1fr auto auto;
-      gap: 2rem;
+      grid-template-columns: clamp(1.8rem, 4vw, 3.5rem) 1fr auto auto;
+      gap: clamp(0.8rem, 2vw, 2rem);
       align-items: center;
-      padding: 2rem 0;
+      padding: clamp(1rem, 2.5vw, 2rem) 0;
       border-bottom: 1px solid var(--zinc);
       cursor: pointer;
       position: relative;
@@ -1210,7 +1217,7 @@
     }
 
     .projet-name {
-      font-size: clamp(1.2rem, 2.2vw, 2rem);
+      font-size: clamp(1rem, 3.5vw, 2rem);
       font-weight: 700;
       letter-spacing: -0.02em;
       position: relative;
@@ -1271,10 +1278,10 @@
     }
 
     .proj-exp-inner {
-      padding: 3rem 5rem;
+      padding: clamp(1.5rem, 3vw, 3rem) clamp(1.5rem, 5vw, 5rem);
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+      gap: clamp(1.5rem, 4vw, 4rem);
     }
 
     .proj-exp-inner h4 {
@@ -1294,7 +1301,7 @@
 
     /* CONTACT */
     #contact {
-      padding: 14rem 3rem;
+      padding: clamp(5rem, 12vw, 14rem) clamp(1.2rem, 5vw, 3rem);
       position: relative;
       z-index: 1;
       overflow: hidden;
@@ -1346,9 +1353,10 @@
     }
 
     .contact-info {
-      margin-top: 5rem;
+      margin-top: clamp(2.5rem, 5vw, 5rem);
       display: flex;
-      gap: 6rem;
+      flex-wrap: wrap;
+      gap: clamp(2rem, 5vw, 6rem);
       position: relative;
       z-index: 1;
     }
@@ -1380,13 +1388,15 @@
     }
 
     footer {
-      padding: 2.5rem 3rem;
+      padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.2rem, 4vw, 3rem);
       border-top: 1px solid var(--zinc);
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
+      gap: 0.8rem;
       font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
+      font-size: clamp(0.52rem, 1.2vw, 0.62rem);
       letter-spacing: 0.1em;
       color: var(--zinc-light);
       text-transform: uppercase;
@@ -1449,14 +1459,14 @@
 
     /* ===== KINETIX AGENCY SECTION ===== */
     #kinetix-section {
-      padding: 10rem 3rem;
+      padding: clamp(4rem, 10vw, 10rem) clamp(1.2rem, 5vw, 3rem);
       position: relative;
       z-index: 1;
     }
 
     .kinetix-inner {
       border: 1px solid var(--zinc);
-      padding: 5rem;
+      padding: clamp(1.5rem, 5vw, 5rem);
       position: relative;
       overflow: hidden;
       background: var(--bg2);
@@ -1490,8 +1500,8 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 4rem;
-      gap: 3rem;
+      margin-bottom: clamp(2rem, 4vw, 4rem);
+      gap: clamp(1rem, 3vw, 3rem);
       flex-wrap: wrap;
     }
 
@@ -1548,10 +1558,10 @@
 
     .kinetix-stats {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
       gap: 1px;
       background: var(--zinc);
-      margin-bottom: 3.5rem;
+      margin-bottom: clamp(2rem, 4vw, 3.5rem);
     }
 
     .k-stat {
@@ -1618,9 +1628,9 @@
 
     .kinetix-team {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
       gap: 1rem;
-      margin-bottom: 3rem;
+      margin-bottom: clamp(1.5rem, 3vw, 3rem);
     }
 
     .k-member {
@@ -1695,7 +1705,7 @@
 
     /* ===== 6 LIVE-DEMO FEATURE CARDS ===== */
     #features {
-      padding: 10rem 3rem;
+      padding: clamp(4rem, 10vw, 10rem) clamp(1.2rem, 5vw, 3rem);
       position: relative;
       z-index: 1;
     }
@@ -1716,7 +1726,7 @@
 
     .feat-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
       gap: 1px;
       background: var(--zinc);
     }
@@ -1823,82 +1833,12 @@
     }
 
     /* ============================================
-   TABLET  ≤1024px
+   ONLY ESSENTIAL OVERRIDES — layout is fluid by default
    ============================================ */
-    @media(max-width:1024px) {
-      nav {
-        padding: 1.5rem 2rem;
-      }
 
-      .nav-links {
-        gap: 1.5rem;
-      }
+    /* Hide desktop cursor on touch devices */
+    @media (hover:none) and (pointer:coarse) {
 
-      #hero {
-        padding: 0 2rem 5rem;
-      }
-
-      #globe-wrap {
-        width: min(420px, 45vw);
-        height: min(420px, 45vw);
-      }
-
-      #about {
-        padding: 8rem 2rem;
-        gap: 4rem;
-      }
-
-      .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .feat-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      #kinetix-section {
-        padding: 8rem 2rem;
-      }
-
-      .kinetix-inner {
-        padding: 3.5rem;
-      }
-
-      .kinetix-stats {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .kinetix-team {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      #projets {
-        padding: 8rem 2rem;
-      }
-
-      .proj-exp-inner {
-        padding: 2.5rem 3rem;
-      }
-
-      #features {
-        padding: 8rem 2rem;
-      }
-
-      #contact {
-        padding: 10rem 2rem;
-      }
-
-      .contact-info {
-        gap: 3rem;
-      }
-    }
-
-    /* ============================================
-   MOBILE  ≤768px  (iPhone, Android)
-   ============================================ */
-    @media(max-width:768px) {
-
-      /* CURSOR off — iOS/Android tap fix */
       #cur-dot,
       #cur-ring,
       #cur-trail {
@@ -1909,10 +1849,6 @@
         cursor: auto !important;
       }
 
-      * {
-        cursor: auto;
-      }
-
       a,
       button,
       .projet-row,
@@ -1921,28 +1857,73 @@
       .callout-chip,
       .service-card,
       .feat-card {
-        cursor: pointer;
+        cursor: pointer !important;
       }
+    }
 
-      /* NAV */
-      nav {
-        padding: 1.2rem 1.5rem;
-      }
+    /* Hamburger visible only on narrow screens */
+    @media(max-width:768px) {
 
       .nav-links,
       .nav-status {
         display: none;
       }
 
-      .nav-logo {
-        font-size: 0.85rem;
-      }
-
       #nav-burger {
         display: flex;
       }
 
-      /* GRID bg */
+      .nav-logo {
+        font-size: clamp(0.8rem, 3.5vw, 1rem);
+      }
+
+      /* Hero title smaller floor on tiny phones */
+      .hero-title {
+        font-size: clamp(2.4rem, 13vw, 12rem);
+      }
+
+      .hero-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .btn-primary,
+      .btn-outline {
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero-scroll {
+        display: none;
+      }
+
+      /* Globe fade to subtle watermark */
+      #globe-wrap {
+        opacity: 0.15;
+        width: min(60vw, 280px);
+        height: min(60vw, 280px);
+        right: -4vw;
+        bottom: 8vh;
+        top: auto;
+        transform: none;
+      }
+
+      .globe-ring {
+        display: none;
+      }
+
+      /* Float words tighter */
+      .float-word {
+        padding: 0 1rem;
+        font-size: 0.56rem;
+      }
+
+      /* Project tags hidden on small */
+      .projet-tags {
+        display: none;
+      }
+
+      /* Grid bg simplified */
       .grid-bg {
         grid-template-columns: repeat(3, 1fr);
       }
@@ -1951,455 +1932,23 @@
         display: none;
       }
 
-      /* PRELOADER */
-      .door-wm {
-        font-size: 38vw;
+      /* Footer stacked */
+      footer {
+        flex-direction: column;
+        text-align: center;
       }
 
-      .door-corner {
-        width: 10px;
-        height: 10px;
-      }
-
+      /* Door preloader text smaller floor */
       #loader-name {
-        font-size: clamp(1.3rem, 9vw, 2.5rem);
+        font-size: clamp(1.2rem, 9vw, 2.5rem);
       }
 
       #loader-num {
-        font-size: clamp(2.2rem, 13vw, 5.5rem);
+        font-size: clamp(2rem, 13vw, 6rem);
       }
 
       #loader-line {
-        width: 72vw;
-        max-width: 260px;
-      }
-
-      #loader-label {
-        font-size: 0.5rem;
-        letter-spacing: 0.16em;
-      }
-
-      /* HERO */
-      #hero {
-        padding: 0 1.5rem 5rem;
-        min-height: 100svh;
-      }
-
-      .hero-title {
-        font-size: clamp(2.8rem, 13vw, 5rem);
-        letter-spacing: -0.03em;
-      }
-
-      .hero-eyebrow {
-        font-size: 0.58rem;
-        letter-spacing: 0.14em;
-        margin-bottom: 1rem;
-      }
-
-      .hero-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.5rem;
-        margin-top: 1.5rem;
-      }
-
-      .hero-sub {
-        max-width: 100%;
-        font-size: 0.88rem;
-      }
-
-      .hero-cta {
-        flex-direction: column;
-        width: 100%;
-        gap: 0.7rem;
-      }
-
-      .btn-primary,
-      .btn-outline {
-        width: 100%;
-        text-align: center;
-        padding: 0.9rem 1.2rem;
-        font-size: 0.66rem;
-      }
-
-      .hero-scroll {
-        display: none;
-      }
-
-      /* GLOBE */
-      #globe-wrap {
-        width: 240px;
-        height: 240px;
-        right: -50px;
-        top: auto;
-        bottom: 12vh;
-        transform: none;
-        opacity: 0.15;
-      }
-
-      .globe-ring {
-        display: none;
-      }
-
-      /* MARQUEE bands */
-      .float-word {
-        padding: 0 1rem;
-        font-size: 0.56rem;
-        letter-spacing: 0.1em;
-      }
-
-      .float-band {
-        padding: 0.7rem 0;
-      }
-
-      /* ABOUT */
-      #about {
-        grid-template-columns: 1fr;
-        padding: 5rem 1.5rem;
-        gap: 2.5rem;
-      }
-
-      .about-text h2 {
-        font-size: clamp(1.5rem, 6.5vw, 2.2rem);
-      }
-
-      .about-text p {
-        font-size: 0.88rem;
-      }
-
-      .meta-row {
-        font-size: 0.7rem;
-        padding: 0.75rem 0;
-      }
-
-      .stat-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .stat-box {
-        padding: 1.4rem;
-      }
-
-      .stat-box h3 {
-        font-size: 2rem;
-      }
-
-      .skills-box {
-        padding: 1.4rem;
-      }
-
-      .chip {
-        font-size: 0.6rem;
-        padding: 0.28rem 0.65rem;
-      }
-
-      /* SERVICES */
-      #services {
-        padding: 5rem 1.5rem;
-      }
-
-      .services-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.8rem;
-        margin-bottom: 2.5rem;
-        padding-bottom: 1.5rem;
-      }
-
-      .services-header h2 {
-        font-size: clamp(1.9rem, 9vw, 3rem);
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .service-card {
-        padding: 1.8rem;
-        gap: 1rem;
-      }
-
-      .svc-title {
-        font-size: 1.05rem;
-      }
-
-      .svc-desc {
-        font-size: 0.82rem;
-      }
-
-      /* FEATURES */
-      #features {
-        padding: 5rem 1.5rem;
-      }
-
-      .feat-header h2 {
-        font-size: clamp(1.9rem, 9vw, 3rem);
-      }
-
-      .feat-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .feat-demo {
-        height: 175px;
-      }
-
-      .feat-body {
-        padding: 1.4rem;
-      }
-
-      .feat-title {
-        font-size: 1rem;
-      }
-
-      /* EDUFIRST */
-      #edufirst {
-        margin: 0 1.5rem;
-        padding: 2.2rem 1.5rem;
-      }
-
-      #edufirst h2 {
-        font-size: clamp(1.25rem, 5.5vw, 1.9rem);
-        margin-bottom: 1.8rem;
-      }
-
-      .callout-chip {
-        font-size: 0.56rem;
-        padding: 0.28rem 0.65rem;
-      }
-
-      /* KINETIX */
-      #kinetix-section {
-        padding: 5rem 1.5rem;
-      }
-
-      .kinetix-inner {
-        padding: 1.8rem 1.4rem;
-      }
-
-      .kinetix-inner::after {
-        display: none;
-      }
-
-      .kinetix-top {
-        flex-direction: column;
-        gap: 0.8rem;
-        margin-bottom: 2rem;
-      }
-
-      .kinetix-logo-text h2 {
-        font-size: clamp(1.8rem, 10vw, 2.8rem);
-      }
-
-      .kinetix-role {
-        font-size: 0.56rem;
-        padding: 0.4rem 0.8rem;
-        white-space: normal;
-      }
-
-      .kinetix-desc {
-        font-size: 0.86rem;
-        margin-bottom: 2rem;
-      }
-
-      .kinetix-stats {
-        grid-template-columns: 1fr 1fr;
-        margin-bottom: 2rem;
-      }
-
-      .k-stat {
-        padding: 1.1rem 0.9rem;
-      }
-
-      .k-stat h4 {
-        font-size: 1.3rem;
-      }
-
-      .k-stat p {
-        font-size: 0.52rem;
-      }
-
-      .k-clients-label,
-      .k-clients-row {
-        margin-bottom: 1.8rem;
-      }
-
-      .k-client {
-        font-size: 0.58rem;
-        padding: 0.28rem 0.65rem;
-      }
-
-      .kinetix-team {
-        grid-template-columns: 1fr;
-        gap: 0.6rem;
-        margin-bottom: 1.8rem;
-      }
-
-      .k-member {
-        padding: 0.9rem 1rem;
-      }
-
-      .k-member-name {
-        font-size: 0.88rem;
-      }
-
-      /* PROJETS */
-      #projets {
-        padding: 5rem 1.5rem;
-      }
-
-      .projets-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.8rem;
-        margin-bottom: 2.5rem;
-        padding-bottom: 1.5rem;
-      }
-
-      .projets-header h2 {
-        font-size: clamp(1.9rem, 9vw, 3rem);
-      }
-
-      .projet-row {
-        grid-template-columns: 2rem 1fr auto;
-        gap: 0.8rem;
-        padding: 1.2rem 0;
-      }
-
-      .projet-tags {
-        display: none;
-      }
-
-      .projet-name {
-        font-size: clamp(0.95rem, 4.5vw, 1.3rem);
-      }
-
-      .projet-num {
-        font-size: 0.58rem;
-      }
-
-      .proj-arrow {
-        width: 1.8rem;
-        height: 1.8rem;
-        font-size: 0.72rem;
-      }
-
-      .proj-exp-inner {
-        padding: 1.4rem;
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-
-      .proj-exp-inner p {
-        font-size: 0.83rem;
-      }
-
-      .projet-expand.open {
-        max-height: 600px;
-      }
-
-      /* CONTACT */
-      #contact {
-        padding: 6rem 1.5rem;
-      }
-
-      .contact-big {
-        font-size: clamp(2.8rem, 16vw, 6rem);
-        letter-spacing: -0.04em;
-      }
-
-      .contact-info {
-        flex-direction: column;
-        gap: 1.8rem;
-        margin-top: 2.5rem;
-      }
-
-      .ci-item a {
-        font-size: 0.88rem;
-      }
-
-      .ci-label {
-        font-size: 0.56rem;
-      }
-
-      /* FOOTER */
-      footer {
-        flex-direction: column;
-        gap: 0.7rem;
-        text-align: center;
-        padding: 1.8rem 1.5rem;
-        font-size: 0.53rem;
-      }
-
-      /* SECTION LABEL */
-      .section-label {
-        font-size: 0.55rem;
-        margin-bottom: 2rem;
-      }
-    }
-
-    /* ============================================
-   PETIT MOBILE  ≤480px  (iPhone SE, etc.)
-   ============================================ */
-    @media(max-width:480px) {
-      nav {
-        padding: 1rem 1.2rem;
-      }
-
-      #hero {
-        padding: 0 1.2rem 4.5rem;
-      }
-
-      .hero-title {
-        font-size: clamp(2.3rem, 15vw, 3.8rem);
-      }
-
-      .contact-big {
-        font-size: clamp(2.2rem, 17vw, 4rem);
-      }
-
-      .services-header h2,
-      .projets-header h2,
-      .feat-header h2 {
-        font-size: clamp(1.7rem, 10vw, 2.5rem);
-      }
-
-      .kinetix-stats {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .stat-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      #edufirst {
-        margin: 0 1rem;
-        padding: 2rem 1.2rem;
-      }
-
-      #kinetix-section {
-        padding: 4rem 1rem;
-      }
-
-      .kinetix-inner {
-        padding: 1.5rem 1rem;
-      }
-
-      #features,
-      #projets,
-      #services,
-      #about,
-      #contact {
-        padding-left: 1rem;
-        padding-right: 1rem;
-      }
-
-      .feat-demo {
-        height: 155px;
-      }
-
-      .door-wm {
-        font-size: 45vw;
+        width: min(70vw, 260px);
       }
     }
   </style>
@@ -2486,7 +2035,7 @@
       Kinshasa, DRC — Developer & Designer
     </div>
     <h1 class="hero-title" aria-label="Développeur Créatif">
-      <span class="line"><span>DEV</span></span>
+      <span class="line"><span>DEVELOPER</span></span>
       <span class="line"><span class="accent" id="scr-word">CRÉATIF</span></span>
     </h1>
     <div class="hero-bottom">
